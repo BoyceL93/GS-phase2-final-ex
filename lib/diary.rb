@@ -8,6 +8,10 @@ class Diary
         # adds the hash to an array of diary entry hashes
     end
 
+    def entry_history
+        # returns diary entry history
+    end
+
     def count_words
 
     end
