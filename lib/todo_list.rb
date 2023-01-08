@@ -1,29 +1,31 @@
 class TodoList
     def initialize
-
+        @todo_list = []
     end
 
     def add(task)
-        # adds task to todo list
+        if @todo_list.include?(task)
+            return "This task already exists"
+        else
+            @todo_list << task
+        end
     end
 
     def incomplete
-        # returns the todo list
+        return @todo_list
     end
 
-    def complete
-        # returns completed task list
-    end
-
-    def mark_done
-        # pushes the task into the completed task list
+    def task_done(completed_task)
+        if @todo_list.include?(completed_task)
+            @todo_list.delete(completed_task)
+            return @todo_list
+        else
+            return "This task does not exist"
+        end
     end
 
     def clear_todo
-        #  clears the todo list
-    end
-
-    def clear_completed
-        #clears the completed task list
+        @todo_list.clear
+        return @todo_list
     end
 end
